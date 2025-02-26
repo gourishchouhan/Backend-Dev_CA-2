@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express()
-const port = 5000
+const port = process.env.PORT
 
 app.use(express.json());
 
@@ -8,7 +8,7 @@ app.get('/',(req,res) => {
     res.send("Server is running")
 });
 app.listen(port,()=>{
-    console.log(`Server is running at port ${port}`)
+    console.log(`Server is running at port ${PORT}`)
 });
 app.post('/signup', (res,req) => {
     const {username, email, password, dateOfBirth} = req.body;
